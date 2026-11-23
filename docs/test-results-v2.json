@@ -1,0 +1,208 @@
+{
+  "date": "2026-11-23",
+  "extra": {
+    "passed": 8,
+    "results": [
+      "Modo WhatsApp exibe alternativa sem calendário",
+      "Modo WhatsApp não exibe agenda",
+      "Modo WhatsApp aponta para contato provisório sem enviar",
+      "Configuração padrão continua calendário após recarga",
+      "Contexto touch: toque abre painel Peixes",
+      "Contexto touch: navegação de categoria",
+      "Loader não bloqueia quando decode nunca resolve",
+      "Loader tolera erro de imagem e sessionStorage indisponível"
+    ]
+  },
+  "main": {
+    "passed": 88,
+    "introDuration": 1216,
+    "results": [
+      "Loader: logo original aparece na primeira carga",
+      "Loader: desaparece dentro do teto com margem de automação",
+      "Loader: sessão marcada",
+      "Loader: não reaparece na mesma sessão",
+      "Logo: caminho centralizado usa arquivo fornecido",
+      "Catálogo: 30 produtos, todos demonstrativos",
+      "Catálogo: IDs e salesRank únicos",
+      "Cinco preços base preservados",
+      "Catálogo cobre seis espécies",
+      "Mais vendidos ordenados por salesRank",
+      "Seleção Gatos mistura categorias por vendas",
+      "Bolhas podem ser pausadas",
+      "Bolhas pausam fora da tela",
+      "Menu de espécie abre por hover",
+      "Escape fecha o mega menu",
+      "Menu abre com foco de teclado",
+      "Link espécie + categoria tem URL semântica",
+      "Ração de gatos contém apenas quatro itens adequados",
+      "Filtro tipo seca",
+      "Filtros tipo e marca combinados",
+      "Filtros idade e embalagem combinados",
+      "Filtros persistem pela URL",
+      "Filtro de porte funciona para ração de cães",
+      "Filtros sem sentido não aparecem em Higiene",
+      "Busca sem acentos por nome",
+      "Limpar filtros recupera catálogo",
+      "Faixa de preço filtra valores corretamente",
+      "Ordenação menor preço",
+      "Ordenação maior preço",
+      "Ordenação mais vendidos",
+      "Busca vazia orienta o usuário",
+      "Saúde: categoria vazia sem alegação médica",
+      "Produto adiciona quantidade selecionada",
+      "Feedback de produto adicionado",
+      "Subtotal correto para duas unidades",
+      "Aumentar quantidade recalcula subtotal",
+      "Carrinho persiste ao recarregar",
+      "Remover último produto apresenta vazio",
+      "Desfazer restaura quantidade",
+      "Checkout inicia na retirada",
+      "Entrega não inventa frete",
+      "Pagamento indisponível",
+      "Calendário próximo mês",
+      "Calendário mês anterior",
+      "Agenda seleciona horário sem reserva",
+      "Trocar serviço limpa horário",
+      "Senha desativada na interface",
+      "Cadastro retorna apenas aviso de demonstração",
+      "Dados fictícios descartados após teste",
+      "Login não cria autenticação",
+      "Formulário não salva e-mail ou senha",
+      "WhatsApp configurado a partir da logo, sem envio",
+      "Sem overflow: / em 375",
+      "Sem overflow: /especie/gatos em 375",
+      "Sem overflow: /especie/cachorros/racao em 375",
+      "Sem overflow: /catalogo em 375",
+      "Sem overflow: /carrinho em 375",
+      "Sem overflow: /checkout em 375",
+      "Sem overflow: /servicos em 375",
+      "Sem overflow: /conta?modo=cadastrar em 375",
+      "Sem overflow: / em 768",
+      "Sem overflow: /especie/gatos em 768",
+      "Sem overflow: /especie/cachorros/racao em 768",
+      "Sem overflow: /catalogo em 768",
+      "Sem overflow: /carrinho em 768",
+      "Sem overflow: /checkout em 768",
+      "Sem overflow: /servicos em 768",
+      "Sem overflow: /conta?modo=cadastrar em 768",
+      "Sem overflow: / em 1440",
+      "Sem overflow: /especie/gatos em 1440",
+      "Sem overflow: /especie/cachorros/racao em 1440",
+      "Sem overflow: /catalogo em 1440",
+      "Sem overflow: /carrinho em 1440",
+      "Sem overflow: /checkout em 1440",
+      "Sem overflow: /servicos em 1440",
+      "Sem overflow: /conta?modo=cadastrar em 1440",
+      "Menu mobile abre categoria por toque",
+      "Menu mobile navega para espécie + categoria",
+      "Navegação fecha menu mobile",
+      "Busca do header funciona no mobile",
+      "Carrinho mobile soma produtos distintos",
+      "Calendário mobile funciona pelo teclado",
+      "Movimento reduzido desativa bolhas",
+      "Primeiro Tab alcança skip link",
+      "Skip link foca conteúdo",
+      "Nenhum erro de console: []",
+      "Nenhuma falha HTTP: []",
+      "Nenhuma requisição a serviços externos"
+    ],
+    "axe": [
+      {
+        "route": "/",
+        "width": 375,
+        "violations": []
+      },
+      {
+        "route": "/especie/gatos",
+        "width": 375,
+        "violations": []
+      },
+      {
+        "route": "/especie/cachorros/racao",
+        "width": 375,
+        "violations": []
+      },
+      {
+        "route": "/catalogo",
+        "width": 375,
+        "violations": []
+      },
+      {
+        "route": "/carrinho",
+        "width": 375,
+        "violations": []
+      },
+      {
+        "route": "/checkout",
+        "width": 375,
+        "violations": []
+      },
+      {
+        "route": "/servicos",
+        "width": 375,
+        "violations": []
+      },
+      {
+        "route": "/conta?modo=cadastrar",
+        "width": 375,
+        "violations": []
+      },
+      {
+        "route": "/",
+        "width": 1440,
+        "violations": []
+      },
+      {
+        "route": "/especie/gatos",
+        "width": 1440,
+        "violations": []
+      },
+      {
+        "route": "/especie/cachorros/racao",
+        "width": 1440,
+        "violations": []
+      },
+      {
+        "route": "/catalogo",
+        "width": 1440,
+        "violations": []
+      },
+      {
+        "route": "/carrinho",
+        "width": 1440,
+        "violations": []
+      },
+      {
+        "route": "/checkout",
+        "width": 1440,
+        "violations": []
+      },
+      {
+        "route": "/servicos",
+        "width": 1440,
+        "violations": []
+      },
+      {
+        "route": "/conta?modo=cadastrar",
+        "width": 1440,
+        "violations": []
+      }
+    ],
+    "errors": [],
+    "badResponses": [],
+    "external": []
+  },
+  "production": {
+    "passed": 7,
+    "results": [
+      "Rota direta no build: /",
+      "Rota direta no build: /especie/gatos/racao",
+      "Rota direta no build: /produto/racao-caes",
+      "Rota direta no build: /conta?modo=cadastrar",
+      "Rota direta no build: /servicos",
+      "Produto → carrinho → checkout no build",
+      "Sem erro de execução no build"
+    ],
+    "errors": []
+  }
+}

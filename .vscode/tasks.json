@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Pet Cat & Cia: iniciar site",
+      "type": "process",
+      "command": "node",
+      "args": ["${workspaceFolder}/node_modules/vite/bin/vite.js", "--host", "127.0.0.1"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated" }
+    }
+  ]
+}

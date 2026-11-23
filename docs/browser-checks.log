@@ -1,0 +1,201 @@
+### Result
+{"passed":94,"results":["Homepage: cinco produtos","Homepage: cabeçalho visível na carga inicial","Busca ignora acentos e retorna duas rações","Filtro Gatos retorna três produtos","Ordenação crescente correta","Ordenação decrescente correta","Filtros e ordenação persistem pela URL","Busca sem resultados tem orientação","Categoria vazia tem estado informativo","Detalhe adiciona duas unidades e atualiza badge","Feedback de adição exibido","Subtotal 2 × 69,90 = 139,80","Quantidade atualiza subtotal sem erro de ponto flutuante","Carrinho preservado após recarregar","Remoção e carrinho vazio","Desfazer restaura produto e quantidade","Checkout inicia em retirada","Entrega não inventa frete","Pagamento real indisponível","Checkout não coleta dados pessoais ou cartão","Calendário navega ao próximo mês","Calendário volta ao mês anterior","Data e horário refletem seleção sem reserva","Trocar data limpa o horário","Trocar serviço limpa o horário","Sem overflow: / em 375px","Imagens carregadas: / em 375px","Sem overflow: /catalogo em 375px","Imagens carregadas: /catalogo em 375px","Sem overflow: /produto/racao-caes em 375px","Imagens carregadas: /produto/racao-caes em 375px","Sem overflow: /carrinho em 375px","Imagens carregadas: /carrinho em 375px","Sem overflow: /checkout em 375px","Imagens carregadas: /checkout em 375px","Sem overflow: /servicos em 375px","Imagens carregadas: /servicos em 375px","Sem overflow: /sobre em 375px","Imagens carregadas: /sobre em 375px","Sem overflow: /contato em 375px","Imagens carregadas: /contato em 375px","Sem overflow: /legal?tipo=privacidade em 375px","Imagens carregadas: /legal?tipo=privacidade em 375px","Sem overflow: / em 768px","Imagens carregadas: / em 768px","Sem overflow: /catalogo em 768px","Imagens carregadas: /catalogo em 768px","Sem overflow: /produto/racao-caes em 768px","Imagens carregadas: /produto/racao-caes em 768px","Sem overflow: /carrinho em 768px","Imagens carregadas: /carrinho em 768px","Sem overflow: /checkout em 768px","Imagens carregadas: /checkout em 768px","Sem overflow: /servicos em 768px","Imagens carregadas: /servicos em 768px","Sem overflow: /sobre em 768px","Imagens carregadas: /sobre em 768px","Sem overflow: /contato em 768px","Imagens carregadas: /contato em 768px","Sem overflow: /legal?tipo=privacidade em 768px","Imagens carregadas: /legal?tipo=privacidade em 768px","Sem overflow: / em 1440px","Imagens carregadas: / em 1440px","Sem overflow: /catalogo em 1440px","Imagens carregadas: /catalogo em 1440px","Sem overflow: /produto/racao-caes em 1440px","Imagens carregadas: /produto/racao-caes em 1440px","Sem overflow: /carrinho em 1440px","Imagens carregadas: /carrinho em 1440px","Sem overflow: /checkout em 1440px","Imagens carregadas: /checkout em 1440px","Sem overflow: /servicos em 1440px","Imagens carregadas: /servicos em 1440px","Sem overflow: /sobre em 1440px","Imagens carregadas: /sobre em 1440px","Sem overflow: /contato em 1440px","Imagens carregadas: /contato em 1440px","Sem overflow: /legal?tipo=privacidade em 1440px","Imagens carregadas: /legal?tipo=privacidade em 1440px","Menu mobile abre","Menu mobile fecha ao navegar","Calendário operável no mobile","Busca do cabeçalho funciona no mobile","Carrinho mobile soma produtos distintos","Checkout mobile permite selecionar entrega","Teclado: primeiro Tab alcança skip link","Teclado: skip link foca conteúdo","Movimento reduzido respeitado","Storage corrompido não quebra a aplicação","Checkout vazio protegido","Produto inexistente tratado","Rota inexistente tratada","Console sem erros: []","Recursos sem falhas HTTP: []"],"axeReports":[{"route":"/","width":375,"violations":[{"id":"color-contrast","impact":"serious","nodes":[{"target":[".hero-copy > p"],"summary":"Fix any of the following:\n  Element has insufficient color contrast of 3.35 (foreground color: #7a877f, background color: #edf4ee, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"},{"target":[".hero-stamp > span"],"summary":"Fix any of the following:\n  Element has insufficient color contrast of 2.7 (foreground color: #709184, background color: #f0e4ae, font size: 6.0pt (8px), font weight: bold). Expected contrast ratio of 4.5:1"}]}]},{"route":"/catalogo","width":375,"violations":[]},{"route":"/produto/racao-caes","width":375,"violations":[]},{"route":"/carrinho","width":375,"violations":[]},{"route":"/checkout","width":375,"violations":[]},{"route":"/servicos","width":375,"violations":[]},{"route":"/sobre","width":375,"violations":[]},{"route":"/contato","width":375,"violations":[]},{"route":"/legal?tipo=privacidade","width":375,"violations":[]},{"route":"/","width":1440,"violations":[{"id":"color-contrast","impact":"serious","nodes":[{"target":[".hero-copy > p"],"summary":"Fix any of the following:\n  Element has insufficient color contrast of 3.4 (foreground color: #78867e, background color: #edf4ee, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"},{"target":[".hero-photo-label"],"summary":"Fix any of the following:\n  Element has insufficient color contrast of 2.95 (foreground color: #719b8a, background color: #f7faf8, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1"},{"target":[".hero-stamp > span"],"summary":"Fix any of the following:\n  Element has insufficient color contrast of 2.76 (foreground color: #6d8f81, background color: #f0e3ac, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"}]}]},{"route":"/catalogo","width":1440,"violations":[]},{"route":"/produto/racao-caes","width":1440,"violations":[]},{"route":"/carrinho","width":1440,"violations":[]},{"route":"/checkout","width":1440,"violations":[]},{"route":"/servicos","width":1440,"violations":[]},{"route":"/sobre","width":1440,"violations":[]},{"route":"/contato","width":1440,"violations":[]},{"route":"/legal?tipo=privacidade","width":1440,"violations":[]}],"errors":[],"failures":[]}
+### Ran Playwright code
+```js
+await (async page => {
+  const results = [];
+  const errors = [];
+  const failures = [];
+  page.on('pageerror', error => errors.push(error.message));
+  page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
+  page.on('response', response => { if (response.status() >= 400) failures.push(`${response.status()} ${response.url()}`); });
+  const check = async (predicate, description) => { for (let attempt = 0; attempt < 30; attempt++) { if (await predicate()) { results.push(description); return; } await page.waitForTimeout(100); } throw new Error(description); };
+  const settle = () => page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+  const text = async selector => (await page.locator(selector).innerText()).replace(/\s+/g, ' ');
+  const root = 'http://127.0.0.1:5173';
+  await page.goto(root);
+  await page.evaluate(() => localStorage.removeItem('pet-cat-cia:cart:v1'));
+  await page.reload();
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.getByRole('heading', { name: /Tudo para seu pet/ }).waitFor();
+  await settle();
+  await check(async () => await page.locator('.product-card').count() === 5, 'Homepage: cinco produtos');
+  await settle();
+  await check(async () => await page.evaluate(() => window.scrollY) === 0, 'Homepage: cabeçalho visível na carga inicial');
+  await page.screenshot({ path: 'docs/screenshots/home-desktop.png', fullPage: true, animations: 'disabled' });
+  await page.getByRole('link', { name: 'Ver produtos', exact: true }).click();
+  await page.getByLabel('Buscar no catálogo').fill('racao');
+  await settle();
+  await check(async () => await page.locator('.product-card').count() === 2, 'Busca ignora acentos e retorna duas rações');
+  await page.getByLabel('Buscar no catálogo').fill('');
+  await page.waitForFunction(() => !new URLSearchParams(location.search).has('q'));
+  await page.getByRole('button', { name: /Gatos/ }).click();
+  await page.getByText('3 produtos encontrados em Gatos', { exact: true }).waitFor();
+  await settle();
+  await check(async () => await page.locator('.product-card').count() === 3, 'Filtro Gatos retorna três produtos');
+  await page.getByLabel('Ordenar por').selectOption('price-asc');
+  await settle();
+  await check(async () => (await page.locator('.product-info h3').allTextContents())[0] === 'Areia sanitária', 'Ordenação crescente correta');
+  await page.getByLabel('Ordenar por').selectOption('price-desc');
+  await settle();
+  await check(async () => (await page.locator('.product-info h3').allTextContents())[0] === 'Ração para gatos', 'Ordenação decrescente correta');
+  await page.reload();
+  await settle();
+  await check(async () => await page.getByLabel('Ordenar por').inputValue() === 'price-desc' && await page.locator('.product-card').count() === 3, 'Filtros e ordenação persistem pela URL');
+  await page.getByLabel('Buscar no catálogo').fill('xxxxxxxx');
+  await settle();
+  await check(async () => await page.getByRole('heading', { name: 'Nenhum produto por aqui' }).isVisible(), 'Busca sem resultados tem orientação');
+  await page.getByRole('button', { name: 'Limpar busca e filtros' }).click();
+  await page.getByRole('button', { name: /Acessórios/ }).click();
+  await settle();
+  await check(async () => await page.getByText('Os acessórios ainda não fazem parte do catálogo demonstrativo.').isVisible(), 'Categoria vazia tem estado informativo');
+  await page.getByRole('button', { name: 'Limpar busca e filtros' }).click();
+  await page.screenshot({ path: 'docs/screenshots/catalogo-desktop.png', fullPage: true, animations: 'disabled' });
+  await page.getByRole('link', { name: 'Ver detalhes de Ração para cães' }).click();
+  await page.getByRole('button', { name: 'Aumentar quantidade de Ração para cães' }).click();
+  await page.getByRole('button', { name: 'Adicionar ao carrinho', exact: true }).click();
+  await settle();
+  await check(async () => await page.getByRole('link', { name: 'Carrinho com 2 itens' }).isVisible(), 'Detalhe adiciona duas unidades e atualiza badge');
+  await settle();
+  await check(async () => await page.locator('.toast').innerText() === 'Ração para cães adicionado ao carrinho.', 'Feedback de adição exibido');
+  await page.screenshot({ path: 'docs/screenshots/produto-desktop.png', fullPage: true, animations: 'disabled' });
+  await page.getByRole('link', { name: 'Ver meu carrinho' }).click();
+  await settle();
+  await check(async () => (await text('.summary-total')).includes('139,80'), 'Subtotal 2 × 69,90 = 139,80');
+  await page.getByRole('button', { name: 'Aumentar quantidade de Ração para cães' }).click();
+  await settle();
+  await check(async () => (await text('.summary-total')).includes('209,70'), 'Quantidade atualiza subtotal sem erro de ponto flutuante');
+  await page.getByRole('button', { name: 'Diminuir quantidade de Ração para cães' }).click();
+  await page.reload();
+  await settle();
+  await check(async () => (await text('.summary-total')).includes('139,80'), 'Carrinho preservado após recarregar');
+  await page.getByRole('button', { name: 'Remover Ração para cães' }).click();
+  await settle();
+  await check(async () => await page.getByRole('heading', { name: 'Seu carrinho está esperando por carinho' }).isVisible(), 'Remoção e carrinho vazio');
+  await page.getByRole('button', { name: 'Desfazer' }).click();
+  await settle();
+  await check(async () => (await text('.summary-total')).includes('139,80'), 'Desfazer restaura produto e quantidade');
+  await page.screenshot({ path: 'docs/screenshots/carrinho-desktop.png', fullPage: true, animations: 'disabled' });
+  await page.getByRole('link', { name: 'Avançar à demonstração' }).click();
+  await settle();
+  await check(async () => await page.getByRole('radio', { name: /Retirada na loja/ }).isChecked(), 'Checkout inicia em retirada');
+  await page.getByRole('radio', { name: /^Entrega/ }).check();
+  await settle();
+  await check(async () => (await text('.order-summary')).includes('Frete não incluído'), 'Entrega não inventa frete');
+  await settle();
+  await check(async () => await page.getByRole('button', { name: 'Pagamento indisponível', exact: true }).isDisabled(), 'Pagamento real indisponível');
+  await settle();
+  await check(async () => await page.locator('input:not([type=radio]):not([type=search])').count() === 0, 'Checkout não coleta dados pessoais ou cartão');
+  await page.screenshot({ path: 'docs/screenshots/checkout-desktop.png', fullPage: true, animations: 'disabled' });
+  await page.getByRole('link', { name: 'Serviços & cuidados', exact: true }).click();
+  const currentMonth = await text('.calendar-header h2');
+  await page.getByRole('button', { name: 'Próximo mês' }).click();
+  await settle();
+  await check(async () => await text('.calendar-header h2') !== currentMonth, 'Calendário navega ao próximo mês');
+  await page.getByRole('button', { name: 'Mês anterior' }).click();
+  await settle();
+  await check(async () => await text('.calendar-header h2') === currentMonth, 'Calendário volta ao mês anterior');
+  await page.locator('.calendar-grid button:not([disabled])').first().click();
+  await page.getByRole('button', { name: '10:30', exact: true }).click();
+  await settle();
+  await check(async () => (await text('.booking-summary')).includes('10:30') && (await text('.booking-summary')).includes('Nenhum horário foi reservado'), 'Data e horário refletem seleção sem reserva');
+  await page.locator('.calendar-grid button:not([disabled])').last().click();
+  await settle();
+  await check(async () => (await text('.booking-summary')).includes('A escolher'), 'Trocar data limpa o horário');
+  await page.getByRole('button', { name: '14:00', exact: true }).click();
+  await page.getByLabel('Serviço ilustrativo').selectOption('Banho e tosa');
+  await settle();
+  await check(async () => (await text('.booking-summary')).includes('A escolher'), 'Trocar serviço limpa o horário');
+  await page.getByRole('button', { name: '15:30', exact: true }).click();
+  await page.screenshot({ path: 'docs/screenshots/servicos-desktop.png', fullPage: true, animations: 'disabled' });
+  const axeReports = [];
+  const routes = ['/', '/catalogo', '/produto/racao-caes', '/carrinho', '/checkout', '/servicos', '/sobre', '/contato', '/legal?tipo=privacidade'];
+  for (const width of [375, 768, 1440]) {
+    await page.setViewportSize({ width, height: width === 1440 ? 1000 : 900 });
+    for (const route of routes) {
+      await page.goto(root + route);
+      await page.locator('main h1').waitFor();
+      await page.evaluate(() => document.fonts.ready);
+      for (const img of await page.locator('img').all()) { if (await img.isVisible()) await img.scrollIntoViewIfNeeded(); }
+      await page.waitForFunction(() => [...document.images].every(img => img.complete && img.naturalWidth > 0));
+      await page.evaluate(() => window.scrollTo(0, 0));
+      await settle();
+  await check(async () => await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `Sem overflow: ${route} em ${width}px`);
+      await settle();
+  await check(async () => await page.locator('img').evaluateAll(imgs => imgs.every(img => img.complete && img.naturalWidth > 0)), `Imagens carregadas: ${route} em ${width}px`);
+      if (width === 375 || width === 1440) {
+        await page.addScriptTag({ path: 'node_modules/axe-core/axe.min.js' });
+        const report = await page.evaluate(async () => await window.axe.run(document, { runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21aa'] } }));
+        axeReports.push({ route, width, violations: report.violations.map(v => ({ id: v.id, impact: v.impact, nodes: v.nodes.map(n => ({ target: n.target, summary: n.failureSummary })) })) });
+      }
+      if (['/', '/catalogo', '/carrinho', '/checkout', '/servicos'].includes(route)) await page.screenshot({ path: `docs/screenshots/${route === '/' ? 'home' : route.slice(1)}-${width}.png`, fullPage: true, animations: 'disabled' });
+    }
+  }
+  await page.setViewportSize({ width: 375, height: 900 });
+  await page.goto(root);
+  await page.getByRole('button', { name: 'Abrir menu' }).click();
+  await settle();
+  await check(async () => await page.getByRole('link', { name: 'Serviços & cuidados', exact: true }).isVisible(), 'Menu mobile abre');
+  await page.getByRole('link', { name: 'Serviços & cuidados', exact: true }).click();
+  await settle();
+  await check(async () => await page.getByRole('button', { name: 'Abrir menu' }).isVisible(), 'Menu mobile fecha ao navegar');
+  await page.locator('.calendar-grid button:not([disabled])').first().click();
+  await page.getByRole('button', { name: '09:00', exact: true }).click();
+  await settle();
+  await check(async () => (await text('.booking-summary')).includes('09:00'), 'Calendário operável no mobile');
+  await page.screenshot({ path: 'docs/screenshots/servicos-mobile-selecionado.png', fullPage: true, animations: 'disabled' });
+  await page.goto(root);
+  await page.getByRole('searchbox', { name: 'Buscar produtos' }).fill('shampoo');
+  await page.getByRole('button', { name: 'Pesquisar produtos' }).click();
+  await settle();
+  await check(async () => await page.locator('.product-card').count() === 1, 'Busca do cabeçalho funciona no mobile');
+  await page.getByRole('button', { name: 'Adicionar Shampoo pet ao carrinho' }).click();
+  await page.getByRole('link', { name: 'Carrinho com 3 itens' }).click();
+  await page.getByRole('button', { name: 'Aumentar quantidade de Shampoo pet' }).click();
+  await settle();
+  await check(async () => (await text('.summary-total')).includes('195,60'), 'Carrinho mobile soma produtos distintos');
+  await page.getByRole('button', { name: 'Remover Shampoo pet' }).click();
+  await page.getByRole('link', { name: 'Avançar à demonstração' }).click();
+  await page.getByRole('radio', { name: /^Entrega/ }).check();
+  await settle();
+  await check(async () => (await text('.order-summary')).includes('Frete não incluído'), 'Checkout mobile permite selecionar entrega');
+  await page.goto(root);
+  await page.keyboard.press('Tab');
+  await settle();
+  await check(async () => await page.evaluate(() => document.activeElement?.textContent) === 'Pular para o conteúdo', 'Teclado: primeiro Tab alcança skip link');
+  await page.keyboard.press('Enter');
+  await settle();
+  await check(async () => await page.evaluate(() => document.activeElement?.id) === 'main', 'Teclado: skip link foca conteúdo');
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await settle();
+  await check(async () => await page.locator('.hero-copy').evaluate(el => getComputedStyle(el).animationName) === 'none', 'Movimento reduzido respeitado');
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.evaluate(() => localStorage.setItem('pet-cat-cia:cart:v1', '{invalid'));
+  await page.reload();
+  await settle();
+  await check(async () => await page.getByRole('link', { name: 'Carrinho com 0 itens' }).isVisible(), 'Storage corrompido não quebra a aplicação');
+  await page.goto(root + '/checkout');
+  await settle();
+  await check(async () => await page.getByRole('heading', { name: 'Seu carrinho está vazio' }).isVisible(), 'Checkout vazio protegido');
+  await page.goto(root + '/produto/inexistente');
+  await settle();
+  await check(async () => await page.getByRole('heading', { name: 'Produto não encontrado' }).isVisible(), 'Produto inexistente tratado');
+  await page.goto(root + '/pagina-inexistente');
+  await settle();
+  await check(async () => await page.getByRole('heading', { name: 'Essa página saiu para passear' }).isVisible(), 'Rota inexistente tratada');
+  await page.goto(root);
+  await settle();
+  await check(async () => errors.length === 0, `Console sem erros: ${JSON.stringify(errors)}`);
+  await settle();
+  await check(async () => failures.length === 0, `Recursos sem falhas HTTP: ${JSON.stringify(failures)}`);
+  return { passed: results.length, results, axeReports, errors, failures };
+}
+
+
+
+
+
+)(page);
+```
+### Events
+- New console entries: .playwright-cli\console-2026-11-23T11-36-36-236Z.log#L5-L82

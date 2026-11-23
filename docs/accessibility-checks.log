@@ -1,0 +1,55 @@
+### Result
+{"audits":9,"failures":0,"reports":[{"name":"Home 375px, movimento normal","violations":[]},{"name":"Menu mobile aberto","violations":[]},{"name":"Calendário 375px com data e horário selecionados pelo teclado","violations":[]},{"name":"Filtro selecionado 375px","violations":[]},{"name":"Home 1440px, movimento normal","violations":[]},{"name":"Calendário 1440px com data e horário selecionados pelo teclado","violations":[]},{"name":"Filtro selecionado 1440px","violations":[]},{"name":"Checkout mobile: entrega selecionada","violations":[]},{"name":"Carrinho vazio com feedback e desfazer","violations":[]}]}
+### Ran Playwright code
+```js
+await (async page => {
+  const reports = [];
+  const root = 'http://127.0.0.1:5173';
+  async function audit(name) {
+    await page.evaluate(() => Promise.all(document.getAnimations().map(a => a.finished.catch(() => {}))));
+    await page.addScriptTag({ path: 'node_modules/axe-core/axe.min.js' });
+    const result = await page.evaluate(async () => window.axe.run(document, { runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21aa'] } }));
+    reports.push({ name, violations: result.violations.map(v => ({ id: v.id, nodes: v.nodes.map(n => ({ target: n.target, summary: n.failureSummary })) })) });
+  }
+  for (const width of [375, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto(root);
+    await page.locator('h1').waitFor();
+    await audit(`Home ${width}px, movimento normal`);
+    await page.screenshot({ path: `docs/screenshots/home-final-${width}.png`, fullPage: true, animations: 'disabled' });
+    if (width === 375) { await page.getByRole('button', { name: 'Abrir menu' }).click(); await audit('Menu mobile aberto'); await page.keyboard.press('Tab'); }
+    await page.goto(root + '/servicos');
+    await page.locator('.calendar-grid button:not([disabled])').first().focus();
+    await page.keyboard.press('Enter');
+    await page.getByRole('button', { name: '10:30', exact: true }).focus();
+    await page.keyboard.press('Enter');
+    if (!(await page.locator('.booking-summary').innerText()).includes('10:30')) throw new Error('Seleção pelo teclado falhou');
+    await audit(`Calendário ${width}px com data e horário selecionados pelo teclado`);
+    const targets = await page.locator('.calendar-grid button').evaluateAll(nodes => nodes.map(n => ({ w: n.getBoundingClientRect().width, h: n.getBoundingClientRect().height })));
+    if (targets.some(t => t.w < 44 || t.h < 44)) throw new Error(`Alvos de toque menores que 44px: ${width}`);
+    await page.evaluate(() => { document.activeElement?.blur(); window.scrollTo(0, 0); });
+    await page.screenshot({ path: `docs/screenshots/servicos-final-${width}.png`, fullPage: true, animations: 'disabled' });
+    await page.goto(root + '/catalogo');
+    await page.getByRole('button', { name: /Higiene/ }).click();
+    await page.getByText('2 produtos encontrados em Higiene', { exact: true }).waitFor();
+    await audit(`Filtro selecionado ${width}px`);
+  }
+  await page.setViewportSize({ width: 375, height: 900 });
+  await page.goto(root + '/produto/racao-caes');
+  await page.getByRole('button', { name: 'Adicionar ao carrinho', exact: true }).click();
+  await page.goto(root + '/checkout');
+  await page.getByRole('radio', { name: /^Entrega/ }).check();
+  await audit('Checkout mobile: entrega selecionada');
+  await page.goto(root + '/carrinho');
+  await page.getByRole('button', { name: 'Remover Ração para cães' }).click();
+  await audit('Carrinho vazio com feedback e desfazer');
+  const failures = reports.filter(r => r.violations.length);
+  return { audits: reports.length, failures: failures.length, reports };
+}
+)(page);
+```
+### Page
+- Page URL: http://127.0.0.1:5173/carrinho
+- Page Title: Meu carrinho | Pet Cat & Cia
+### Events
+- New console entries: .playwright-cli\console-2026-11-23T11-36-36-236Z.log#L83-L93
