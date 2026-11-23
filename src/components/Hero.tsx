@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { Pause, Play, Sparkles } from "lucide-react";
+import { Pause, Play} from "lucide-react";
 import { brand } from "../config/brand";
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
