@@ -16,8 +16,8 @@ function Titles() {
   useEffect(() => {
     const favicon = document.querySelector<HTMLLinkElement>('link[rel="icon"]');
     if (favicon) {
-      favicon.href = brand.logo;
-      favicon.removeAttribute("type");
+      favicon.href = brand.favicon;
+      favicon.type = "image/svg+xml";
     }
     const names: Record<string, string> = {
       "/": "Pet shop em São Bernardo do Campo",

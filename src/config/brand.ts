@@ -10,6 +10,7 @@ export const brand = {
   headerLogoHeight: 724,
   // Remove apenas as margens transparentes do arquivo durante a exibição.
   headerLogoViewBox: "443 35 1290 648",
+  favicon: "/favicon.svg",
   hero: "/images/hero-banho-recorte.png",
   provisional: true,
 };
