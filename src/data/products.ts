@@ -1,43 +1,44 @@
 import type { Category, Product, ProductImageData, Species } from "../types";
+const asset = (path: string) => import.meta.env.BASE_URL + path;
 const baseImage = (viewBox: string): ProductImageData => ({
-  src: "/images/products.png",
+  src: asset("images/products.png"),
   viewBox,
   width: 1536,
   height: 1024,
 });
 export const demoImages = {
   food: {
-    src: "/images/catalogo-extra.png",
+    src: asset("images/catalogo-extra.png"),
     viewBox: "0 0 512 512",
     width: 1536,
     height: 1024,
   },
   treat: {
-    src: "/images/catalogo-extra.png",
+    src: asset("images/catalogo-extra.png"),
     viewBox: "512 0 512 512",
     width: 1536,
     height: 1024,
   },
   toy: {
-    src: "/images/catalogo-extra.png",
+    src: asset("images/catalogo-extra.png"),
     viewBox: "1024 0 512 512",
     width: 1536,
     height: 1024,
   },
   bed: {
-    src: "/images/catalogo-extra.png",
+    src: asset("images/catalogo-extra.png"),
     viewBox: "0 512 512 512",
     width: 1536,
     height: 1024,
   },
   bowl: {
-    src: "/images/catalogo-extra.png",
+    src: asset("images/catalogo-extra.png"),
     viewBox: "512 512 512 512",
     width: 1536,
     height: 1024,
   },
   brush: {
-    src: "/images/catalogo-extra.png",
+    src: asset("images/catalogo-extra.png"),
     viewBox: "1024 512 512 512",
     width: 1536,
     height: 1024,

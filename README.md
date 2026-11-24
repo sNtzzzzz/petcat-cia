@@ -40,3 +40,7 @@ Os textos do cabeçalho e rodapé ficam em `src/components/Layout.tsx`. Contatos
 O catálogo, busca, filtros, carrinho local, checkout e calendário demonstrativo funcionam. Não existem banco de dados, autenticação, estoque, pagamento ou agendamento real. Produtos, preços, marcas e serviços ainda precisam ser confirmados pelo cliente.
 
 Antes de publicar, revise `PENDENCIAS.md`, substitua dados demonstrativos e remova o `noindex` de `index.html`.
+
+## GitHub Pages
+
+O workflow `.github/workflows/deploy-pages.yml` compila e publica o site quando a branch `main` é enviada ao GitHub. No repositório, acesse **Settings → Pages** e selecione **GitHub Actions** em *Source*. O endereço será `https://sntzzzzz.github.io/petcat-cia/`.
