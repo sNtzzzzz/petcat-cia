@@ -877,9 +877,6 @@ p {
   font-family: var(--font-body);
   font-weight: 650;
 }
-.footer .asset-credit {
-  font-size: 11px;
-}
 @keyframes bubble-float {
   from {
     transform: translateY(8px) translateX(-4px);

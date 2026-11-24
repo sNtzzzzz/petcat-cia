@@ -59,9 +59,7 @@ export function Contact() {
         <section>
           <MessageCircle size={32} aria-hidden="true" />
           <h2>WhatsApp</h2>
-          <p>
-            {contact.phoneDisplay}. {contact.note}
-          </p>
+          <p>{contact.phoneDisplay}</p>
           <span className="label">Contato a confirmar</span>
           <p>
             <a

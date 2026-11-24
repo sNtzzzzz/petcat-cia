@@ -32,6 +32,6 @@ Mais vendidos demonstrativos → categorias → seleções por espécie com cate
 
 375px: busca em linha própria, menu por toque, cards em duas colunas, calendário44px.768px: duas/três colunas.1440px: catálogo em três colunas com sidebar e home em quatro. Sem overflow e sem alturas de tela forçadas.
 
-## Referências e precedência
+## Ativos
 
-Mantidas as análises Shopify/Airbnb da coleção awesome-design-md consultadas na v1 para hierarquia, sem copiar identidade. design-taste-frontend orienta consistência; briefing prevalece sobre kit estático, proibição de notas demonstrativas e seções de uma tela. web-design-guidelines orienta acessibilidade. Não declarar gate automático da taste aprovado: seus requisitos incompatíveis não são executados.
+As logos foram fornecidas pelo cliente. O hero e as embalagens são imagens demonstrativas geradas para o projeto. A fonte Manrope usa a licença SIL OFL incluída em `public/fonts/OFL.txt`; os ícones Lucide usam licença ISC.
